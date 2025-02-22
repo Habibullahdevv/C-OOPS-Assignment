@@ -35,7 +35,7 @@
 
 
         //}
-                    ///Polymorphism
+        ///Polymorphism
 
         //Vehicles vehicleTyres = new Suzuki();
 
@@ -45,5 +45,19 @@
 
         //vehicleTyres.transportVehicle();
 
+
+        //Abstraction
+        class Program
+    {
+        static void Main()
+        {
+            BankAccount account = new SavingsAccount(1000);
+            account.Deposit(500);
+            account.Withdraw(300);
+            account.ShowBalance();
+        }
     }
+
+
+}
 }

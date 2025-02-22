@@ -119,7 +119,7 @@
 //    {
 
 //        Console.WriteLine("Usually small transport vehicles has 4 tyres");
-    
+
 //    }
 //}
 
@@ -146,3 +146,53 @@
 
 
 //}
+
+
+                                        // Abstract class
+abstract class BankAccount
+{
+    protected double balance;
+
+    public BankAccount(double initialBalance)
+    {
+        balance = initialBalance;
+    }
+
+    public abstract void Deposit(double amount);
+    public abstract void Withdraw(double amount);
+
+    public void ShowBalance()
+    {
+        Console.WriteLine($"Current Balance: {balance}");
+    }
+}
+
+// Concrete class
+class SavingsAccount : BankAccount
+{
+    public SavingsAccount(double initialBalance) : base(initialBalance) { }
+
+    public override void Deposit(double amount)
+    {
+        balance += amount;
+        Console.WriteLine($"Deposited {amount}. New Balance: {balance}");
+    }
+
+    public override void Withdraw(double amount)
+    {
+        if (amount > balance)
+        {
+            Console.WriteLine("Insufficient funds.");
+        }
+        else
+        {
+            balance -= amount;
+            Console.WriteLine($"Withdrew {amount}. New Balance: {balance}");
+        }
+    }
+}
+
+
+
+
+
